@@ -3,7 +3,7 @@
 # In the single equation Gaussian error IV model search over the specified region
 # for the specified target parameter and conduct estimation and inference.
 # This file can be used to compute set estimates and confidence sets for Conditional Marginal Effects
-# and Counterfactual Response Probabilities reported in Tables 4--6.
+# and Counterfactual Response Probabilities reported in Tables 3--5.
 
 # The MTO ICPSR data is required for replication. The data is not public, but may be acquired from ICPSR.
 # See https://www.icpsr.umich.edu/web/ICPSR/studies/34860
