@@ -339,7 +339,7 @@ arglist$param_fun <- si$param_fun
 arglist$studentize_moments <- T
   
 #-------------- CONDUCT START SEARCH OVER THE RANGE ------------------------
-nRandomStartVecs <- 100 # Number of starting values for initial search.
+nRandomStartVecs <- 1000 # Number of starting values for initial search.
 theta_start_vals <- matrix(0,ncol = (nDeterministicStartVecs + nRandomStartVecs), nrow=nParams)
 theta_start_vals[,1:nDeterministicStartVecs] <- deterministic_theta_start_vals
 theta_param_vals <- rep(0,nDeterministicStartVecs + nRandomStartVecs) # Save the value of the function of theta or subvector for the given value of theta
