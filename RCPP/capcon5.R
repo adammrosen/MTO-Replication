@@ -12,7 +12,7 @@ sncv <- function(p, alpha, n) {
 }
 
 #######################################################################################################################################
-# FUNCTION make_t_pairs computes a collection of (t1,t2) pairs with t1 < t2 for testing inequalities of the form (3.4) in CRS22 
+# FUNCTION make_t_pairs computes a collection of (t1,t2) pairs with t1 < t2 for testing inequalities of the form (3.2) in CRS23 
 # INPUT ARGUMENTS
 #   n: sample size.
 # RETURNS
@@ -133,7 +133,7 @@ ConRP <- function(theta,moreargs) {
 #   delta_x: Coefficients on X in the "first stage". The first column are coefficients to use when Z==0, second column when Z==1, third column when Z==2.
 #   R: Vector of covariances of U with V.
 #   SigmaV: Variance of (V1,V2).
-#   XZprobs_file: Names of file from which to load the support and probability mass function for (x,z)
+#   XZprobs_file: Name of file from which to load the support and probability mass function for (x,z)
 # RETURNS:
 #   A list comprising [Y,W,X,Z] of data generated using the given arguments.
 Simulate_Data <- function(thresholds,beta,gamma,delta_x,R,SigmaV,XZprobs_file) {

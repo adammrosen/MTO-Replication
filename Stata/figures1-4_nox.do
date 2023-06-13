@@ -79,7 +79,7 @@ global xgamma_morex "x_f_release1_med_x*[xb1]x_f_release1+tmp_female_med_x*[xb1]
 
 ** ordered probit probabilities and marginal effects
 
-** FIGURE 3 
+** FIGURE 1 
 
 ** W = hood poverty, no covariates
 
@@ -242,7 +242,7 @@ forvalues y = 0/2 {
 	graph export ${pathres}prob_y`y'_nox_min_med_ny_${date}.pdf, replace
 	}
 
-** FIGURE 4 
+** FIGURE 2 
 	
 ** W = (hood poverty, hood minority), no covariates
 
@@ -400,7 +400,7 @@ forvalues y = 0/2 {
 	graph export ${pathres}prob_y`y'_nox_povmin2_med_ny_${date}.pdf, replace
 	}
 
-** FIGURE 5 
+** FIGURE 3 
 
 ** W = hood poverty, no covariates
 
@@ -548,7 +548,7 @@ forvalues y = 0/2 {
 	graph export ${pathres}me_y`y'_nox_min_med_ny_${date}.pdf, replace
 	}
 
-** FIGURE 6 
+** FIGURE 4 
 
 ** W = (hood poverty, hood minority), no covariates
 

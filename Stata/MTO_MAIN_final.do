@@ -1,8 +1,8 @@
 
-* This file creates all the Tables and Figures in Sections 5.1, 5.2 and Appendices B, C, D 
-* plus CT estimates reported in Section 5.3 of "Estimating endogenous effects on ordinal outcomes"
+* This file creates all the Tables and Figures in Sections 4.1, 4.2 and Appendices B, C, D 
+* plus CT estimates reported in Section 4.3 of "Estimating endogenous effects on ordinal outcomes"
 
-* last updated: 	30/06/2022
+* last updated: 	11/06/2023
 * last executed: 	30/06/2022
 
 * set options
@@ -85,11 +85,11 @@ label values ra_site site
 label define group 1 "Experimental" 2 "Section 8" 3 "Control"
 label values ra_group group
 
-** FIGURES 1-2: distribution of hood poverty and minority by randomization group 
+** APPENDIX FIGURES B1-B2: distribution of hood poverty and minority by randomization group 
 
-do ${pgmdir}figures1-2.do
+do ${pgmdir}figuresB1-B2.do
 
-** APPENDIX B: descriptive statistics of baseline covariates by randomization group
+** APPENDIX TABLE B1: descriptive statistics of baseline covariates by randomization group
 
 do ${pgmdir}appendixB.do
 
@@ -97,49 +97,49 @@ do ${pgmdir}appendixB.do
 
 do ${pgmdir}appendixC.do
 
-** TABLE 1: ordered probit estimates; requires myoprobit_lf.ado 
+** TABLE 2: ordered probit estimates; requires myoprobit_lf.ado 
 
-do ${pgmdir}table1.do
+do ${pgmdir}table2.do
 
-** table1_alt.do gives ordered logit and multinomial logit rather than ordered probit estimates, 
+** table2_alt.do gives ordered logit and multinomial logit rather than ordered probit estimates, 
 ** these results are reported as a footnote in the paper. 
 ** This do-file also constructs figures showing probabilities and marginal effects using the alternative models  
 
-do ${pgmdir}table1_alt.do
+do ${pgmdir}table2_alt.do
 
 ** APPENDIX D: CT estimates first stage; requires myoprobit2_lf.ado and myoprobit3_lf.ado 
 
 do ${pgmdir}appendixD.do
 
-** TABLE 2: CT estimates; requires myoprobit2_lf.ado and myoprobit3_lf.ado 
+** TABLE 3: CT estimates; requires myoprobit2_lf.ado and myoprobit3_lf.ado 
 
-do ${pgmdir}table2.do
+do ${pgmdir}table3.do
 
-** table2_alt.do also gives the CT estimates but using a control function approach rather than maximum likelihood, 
+** table3_alt.do also gives the CT estimates but using a control function approach rather than maximum likelihood, 
 ** these results are reported as a footnote in the paper.  
 ** This do-file also constructs figures showing probabilities and marginal effects using the control function approach   
 
 preserve 
 
-do ${pgmdir}table2_alt.do
+do ${pgmdir}table3_alt.do
 
 restore 
 	
-** FIGURES 3-6: constructs figures 3 to 6 in the paper; requires myoprobit_lf.ado, myoprobit2_lf.ado and myoprobit3_lf.ado 
+** FIGURES 1-4: constructs figures 1 to 4 in the paper; requires myoprobit_lf.ado, myoprobit2_lf.ado and myoprobit3_lf.ado 
 
 preserve
 
-do ${pgmdir}figures3-6.do
+do ${pgmdir}figures1-4.do
 
 restore
 
-** figures3-6_nox.do re-constructs figures 3 to 6 using specifications which do not control for baseline covariates, 
+** figures1-4_nox.do re-constructs figures 1 to 4 using specifications which do not control for baseline covariates, 
 ** these results are reported as a footnote in the paper.
 ** requires myoprobit_lf.ado, myoprobit2_lf.ado and myoprobit3_lf.ado 
 
 preserve
 
-do ${pgmdir}figures3-6_nox.do
+do ${pgmdir}figures1-4_nox.do
 
 restore
 
@@ -151,7 +151,7 @@ do ${pgmdir}InfoMatrixTests.do
 
 restore
 
-** CT in TABLES 3-5: estimates and reports the CT estimates in Tables 3-5; requires myoprobit2_lf.ado and myoprobit3_lf.ado 
+** CT in TABLES 4-6: estimates and reports the CT estimates in Tables 4-6; requires myoprobit2_lf.ado and myoprobit3_lf.ado 
 
 preserve
 

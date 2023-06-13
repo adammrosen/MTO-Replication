@@ -1,9 +1,9 @@
 # Profile_IV_MTO
-# Replication Code for Chesher, Rosen, and Siddique (2022): "Estimating Endogenous Effects on Ordinal Outcomes."
+# Replication Code for Chesher, Rosen, and Siddique (2023): "Estimating Endogenous Effects on Ordinal Outcomes."
 # In the single equation Gaussian error IV model search over the specified region
 # for the specified target parameter and conduct estimation and inference.
 # This file can be used to compute set estimates and confidence sets for Conditional Marginal Effects
-# and Counterfactual Response Probabilities reported in Tables 3--5.
+# and Counterfactual Response Probabilities reported in Tables 4--6.
 
 # The MTO ICPSR data is required for replication. The data is not public, but may be acquired from ICPSR.
 # See https://www.icpsr.umich.edu/web/ICPSR/studies/34860
@@ -209,7 +209,7 @@ for (i in 1:nSupportXZ) {
 # It has dimension n by the number of support points of XZ.
 ###########################################################################################################
 
-################ Compute the RHS of the inequalities (3.2) - (3.4), which do not depend on theta
+################ Compute the RHS of inequalities of the form (3.2), which does not depend on theta
 ## The values are replicated across the number of tpairs to enable computing conditional
 ## probabilities without looping over XZ values, but instead through matrix comparisons.
 tpairs_by_xz <- array(tpairs,c(dim(tpairs),nSupportXZ))

@@ -1,5 +1,5 @@
 
-** FIGURE 1
+** FIGURE B1
 
 kdensity f_c9010t_perpov_dw_z, kernel(gaussian) nograph generate(x1 fx1)
 kdensity f_c9010t_perpov_dw_z if ra_group==1, kernel(gaussian) nograph generate(fx1_1) at(x1)
@@ -16,7 +16,7 @@ count if ra_group==2&missing(f_c9010t_perpov_dw_z)==0
 count if ra_group==3&missing(f_c9010t_perpov_dw_z)==0
 count if missing(f_c9010t_perpov_dw_z)
 
-** FIGURE 2
+** FIGURE B2
 
 kdensity f_c9010t_pminorty_dw_z, kernel(gaussian) nograph generate(x2 fx2)
 kdensity f_c9010t_pminorty_dw_z if ra_group==1, kernel(gaussian) nograph generate(fx2_1) at(x2)

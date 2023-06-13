@@ -43,7 +43,7 @@ global xgamma_morex "x_f_release1_med_x*[xb1]x_f_release1+tmp_female_med_x*[xb1]
 scalar hood_pov_touse_nox = f_c9010t_perpov_dw_z_med_nox
 scalar hood_pov_touse_x = f_c9010t_perpov_dw_z_med_x
 
-** TABLE 3
+** TABLE 4
 
 file open csvlog using "${pathres}table4_${date}.csv", write replace
 
@@ -56,7 +56,7 @@ ml model lf myoprobit2_lf (xb1:happy_scale012 = $site_covs f_c9010t_perpov_dw_z,
 ml init xb1:x_f_site_bal=0.1825 x_f_site_bos=0.0528 x_f_site_chi=0.1811 x_f_site_la=0.0674 f_c9010t_perpov_dw_z=-0.1610
 ml maximize, difficult
 
-*** marginal effects for Y = 0,1,2 (reported in column 1 of Table 3)
+*** marginal effects for Y = 0,1,2 (reported in column 1 of Table 4)
 
 file write csvlog "y, ME(Y=y|pov), lower CI, upper CI" _n
 
@@ -103,7 +103,7 @@ ml model lf myoprobit2_lf (xb1:happy_scale012 = $site_covs x_f_release1 $x_covar
 ml init xb1:x_f_site_bal=0.1825 x_f_site_bos=0.0528 x_f_site_chi=0.1811 x_f_site_la=0.0674 f_c9010t_perpov_dw_z=-0.1610
 ml maximize, difficult
 
-*** marginal effects for Y = 0,1,2 (reported in column 2 of Table 3)
+*** marginal effects for Y = 0,1,2 (reported in column 2 of Table 4)
 
 file write csvlog "y, ME(Y=y|povX), lower CI, upper CI" _n
 
@@ -143,7 +143,7 @@ file write csvlog " 2 ," %20.5f (me_x_y2_povmed) "," %20.5f (me_x_y2_povmed_lci)
 
 file close csvlog
 
-** TABLE 4
+** TABLE 5
 
 file open csvlog using "${pathres}table5_${date}.csv", write replace
 
@@ -158,7 +158,7 @@ ml model lf myoprobit3_lf (xb1:happy_scale012 = $site_covs f_c9010t_perpov_dw_z 
 ml init xb1:x_f_site_bal=0.3039 x_f_site_bos=0.3386 x_f_site_chi=0.1527 x_f_site_la=0.0639 f_c9010t_perpov_dw_z=-0.2998 f_c9010t_pminorty_dw_z=0.3151 cut1:_cons=-0.8165
 ml maximize, difficult
 
-*** marginal effects for Y = 0,1,2 (reported in column 1 of Table 4)
+*** marginal effects for Y = 0,1,2 (reported in column 1 of Table 5)
 
 file write csvlog "y, ME(Y=y|povmin), lower CI, upper CI" _n
 
@@ -208,7 +208,7 @@ ml init xb1:x_f_site_bal=0.3039 x_f_site_bos=0.3386 x_f_site_chi=0.1527 x_f_site
 ml maximize, difficult
 est store povmin_t_x
 
-*** marginal effects for Y = 0,1,2 (reported in column 2 of Table 4)
+*** marginal effects for Y = 0,1,2 (reported in column 2 of Table 5)
 
 file write csvlog "y, ME(Y=y|povminX), lower CI, upper CI" _n
 
@@ -248,7 +248,7 @@ file write csvlog " 2 ," %20.5f (me_x_y2_povminmed) "," %20.5f (me_x_y2_povminme
 
 file close csvlog
 
-** TABLE 5a: columns 1 and 2 
+** TABLE 6a: columns 1 and 2 
 
 file open csvlog using "${pathres}table6a_${date}.csv", write replace
 
@@ -261,7 +261,7 @@ ml model lf myoprobit2_lf (xb1:happy_scale012 = $site_covs f_c9010t_perpov_dw_z,
 ml init xb1:x_f_site_bal=0.1825 x_f_site_bos=0.0528 x_f_site_chi=0.1811 x_f_site_la=0.0674 f_c9010t_perpov_dw_z=-0.1610
 ml maximize, difficult
 
-*** counterfactual probabilities that Y = 0,1,2 (reported in column 1 of Table 5)
+*** counterfactual probabilities that Y = 0,1,2 (reported in column 1 of Table 6)
 
 file write csvlog "y, P(Y=y|pov), lower CI, upper CI" _n
 
@@ -308,7 +308,7 @@ ml model lf myoprobit2_lf (xb1:happy_scale012 = $site_covs x_f_release1 $x_covar
 ml init xb1:x_f_site_bal=0.1825 x_f_site_bos=0.0528 x_f_site_chi=0.1811 x_f_site_la=0.0674 f_c9010t_perpov_dw_z=-0.1610
 ml maximize, difficult
 
-*** counterfactual probabilities that Y = 0,1,2 (reported in column 2 of Table 5)
+*** counterfactual probabilities that Y = 0,1,2 (reported in column 2 of Table 6)
 
 file write csvlog "y, P(Y=y|povX), lower CI, upper CI" _n
 
@@ -348,12 +348,12 @@ file write csvlog " 2 ," %20.5f (pr_x_y2_povmed) "," %20.5f (pr_x_y2_povmed_lci)
 
 file close csvlog
 
-** TABLE 5b: columns 4 and 5 
+** TABLE 6b: columns 4 and 5 
 
 file open csvlog using "${pathres}table6b_${date}.csv", write replace
 
 ** now re-set value of hood poverty at (median-SD) to estimate counterfactual probabilities reported in
-** columns 4 and 5 of Table 5
+** columns 4 and 5 of Table 6
 
 scalar hood_pov_touse_nox = f_c9010t_perpov_dw_z_med_nox-f_c9010t_perpov_dw_z_sd_nox
 scalar hood_pov_touse_x = f_c9010t_perpov_dw_z_med_x-f_c9010t_perpov_dw_z_sd_x
@@ -368,7 +368,7 @@ ml model lf myoprobit2_lf (xb1:happy_scale012 = $site_covs f_c9010t_perpov_dw_z,
 ml init xb1:x_f_site_bal=0.1825 x_f_site_bos=0.0528 x_f_site_chi=0.1811 x_f_site_la=0.0674 f_c9010t_perpov_dw_z=-0.1610
 ml maximize, difficult
 
-*** counterfactual probabilities that Y = 0,1,2 (reported in column 4, Table 5)
+*** counterfactual probabilities that Y = 0,1,2 (reported in column 4, Table 6)
 
 file write csvlog "y, P(Y=y|pov), lower CI, upper CI" _n
 
@@ -417,7 +417,7 @@ ml model lf myoprobit2_lf (xb1:happy_scale012 = $site_covs x_f_release1 $x_covar
 ml init xb1:x_f_site_bal=0.1825 x_f_site_bos=0.0528 x_f_site_chi=0.1811 x_f_site_la=0.0674 f_c9010t_perpov_dw_z=-0.1610
 ml maximize, difficult
 
-*** counterfactual probabilities that Y = 0,1,2 (column 5, Table 5)
+*** counterfactual probabilities that Y = 0,1,2 (column 5, Table 6)
 
 nlcom normal([cut1]_cons-(hood_pov_touse_x)*[xb1]f_c9010t_perpov_dw_z - (${xgamma_short}+ ${xgamma_morex}) )
 matrix b = r(b)
