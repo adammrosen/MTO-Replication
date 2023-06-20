@@ -10,5 +10,5 @@ jobs:
         uses: IQSS/dataverse-uploader@v1.4
         with:
           DATAVERSE_TOKEN: 42e2221d-4498-48a3-a363-0fa785bec36a
-          DATAVERSE_SERVER: https://dataverse.harvard.edu
-          DATAVERSE_DATASET_DOI: doi:10.7910/DVN/QIQL8E
+          DATAVERSE_SERVER: https://dataverse.harvard.edu/dataverse/restat
+          DATAVERSE_DATASET_DOI: doi:10.7910/DVN/A63PZX
